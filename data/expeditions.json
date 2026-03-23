@@ -203,7 +203,7 @@
     "stat_weights": { "POW": 0.0, "GRT": 0.50, "AGI": 0.0, "SMT": 0.50, "LOT": 0.0, "LCK": 0.0 },
     "tiers": [
       { "difficulty": 3800, "xp_reward": 1050 },
-      { "difficulty": null, "xp_reward": null },
+      { "difficulty": 5700, "xp_reward": 1260 },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null }
@@ -217,6 +217,34 @@
     "stat_weights": { "POW": 0.0, "GRT": 0.0, "AGI": 0.0, "SMT": 0.30, "LOT": 0.10, "LCK": 0.60 },
     "tiers": [
       { "difficulty": 4200, "xp_reward": 1100 },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null }
+    ]
+  },
+  {
+    "name": "Corrupted Creature Hunt",
+    "preferred_types": ["fire","water"],
+    "opposing_types": ["wind"],
+    "preferred_trait": "Night Vision",
+    "stat_weights": { "POW": 0.30, "GRT": 0.70, "AGI": 0.0, "SMT": 0.0, "LOT": 0.0, "LCK": 0.0 },
+    "tiers": [
+      { "difficulty": 4600, "xp_reward": 1150 },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null }
+    ]
+  },
+  {
+    "name": "Recover Buried Artifacts",
+    "preferred_types": ["earth"],
+    "opposing_types": ["wind"],
+    "preferred_trait": "Lucky",
+    "stat_weights": { "POW": 0.0, "GRT": 0.0, "AGI": 0.0, "SMT": 0.0, "LOT": 0.30, "LCK": 0.70 },
+    "tiers": [
+      { "difficulty": 5000, "xp_reward": 1200 },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null },
