@@ -1,7 +1,6 @@
 """CLI entry point: run the solver and print results."""
 from data_loader import load_creatures, load_expeditions
 from solver import solve
-from calculator import creature_score, party_score
 
 
 def main():
@@ -23,15 +22,9 @@ def main():
     print("EXPEDITION ASSIGNMENTS")
     print("=" * 52)
     for ea in result.expedition_assignments:
-        t = ea.tier
-        ps = party_score(ea.party, ea.expedition)
-        print(f"\n  {ea.expedition.name}")
-        print(f"  Tier {t.number}  diff={t.difficulty}  xp_reward={t.xp_reward}")
-        print(f"  Party score: {ps}  |  Time: {ea.time_minutes:.1f} min"
-              f"  |  XP/s: {ea.xp_per_second:.4f}")
-        for c in ea.party:
-            score = creature_score(c, ea.expedition)
-            print(f"    -{c.name:<10} Lv{c.level:<3} {c.type:<6} [{c.trait}]  score={score}")
+        names = ", ".join(c.name for c in ea.party)
+        print(f"\n  {ea.expedition.name}  Tier {ea.tier.number}  |  XP/s: {ea.xp_per_second:.4f}")
+        print(f"    {names}")
 
     if result.unassigned:
         print()
