@@ -222,5 +222,21 @@
     "trait": "Heat Resist",
     "base_stats": { "POW": 4, "GRT": 14, "AGI": 5, "SMT": 10, "LOT": 26, "LCK": 3 },
     "job_proficiencies": { "Chopping": null, "Mining": null, "Exploring": null, "Digging": 1, "Fishing": null, "Farming": 3 }
+  },
+  {
+    "name": "Luna",
+    "tier": 2,
+    "type": "fire",
+    "trait": "Night Vision",
+    "base_stats": { "POW": 5, "GRT": 5, "AGI": 10, "SMT": 26, "LOT": 12, "LCK": 3 },
+    "job_proficiencies": { "Chopping": null, "Mining": 1, "Exploring": null, "Digging": 3, "Fishing": null, "Farming": null }
+  },
+  {
+    "name": "Spud",
+    "tier": 2,
+    "type": "water",
+    "trait": "Water Breathing",
+    "base_stats": { "POW": 5, "GRT": 26, "AGI": 5, "SMT": 5, "LOT": 14, "LCK": 10 },
+    "job_proficiencies": { "Chopping": null, "Mining": null, "Exploring": null, "Digging": 2, "Fishing": 3, "Farming": null }
   }
 ]
