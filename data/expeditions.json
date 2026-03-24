@@ -79,7 +79,7 @@
       { "difficulty": 700,  "xp_reward": 600 },
       { "difficulty": 1050, "xp_reward": 720 },
       { "difficulty": 1400, "xp_reward": 840 },
-      { "difficulty": null, "xp_reward": null },
+      { "difficulty": 1750, "xp_reward": 960 },
       { "difficulty": null, "xp_reward": null }
     ]
   },
@@ -93,7 +93,7 @@
       { "difficulty": 900,  "xp_reward": 650 },
       { "difficulty": 1350, "xp_reward": 780 },
       { "difficulty": 1800, "xp_reward": 909 },
-      { "difficulty": null, "xp_reward": null },
+      { "difficulty": 2250, "xp_reward": 1040 },
       { "difficulty": null, "xp_reward": null }
     ]
   },
@@ -121,7 +121,7 @@
       { "difficulty": 1500, "xp_reward": 750 },
       { "difficulty": 2250, "xp_reward": 900 },
       { "difficulty": 3000, "xp_reward": 1050 },
-      { "difficulty": null, "xp_reward": null },
+      { "difficulty": 3750, "xp_reward": 1200 },
       { "difficulty": null, "xp_reward": null }
     ]
   },
@@ -245,6 +245,34 @@
     "stat_weights": { "POW": 0.0, "GRT": 0.0, "AGI": 0.0, "SMT": 0.0, "LOT": 0.30, "LCK": 0.70 },
     "tiers": [
       { "difficulty": 5000, "xp_reward": 1200 },
+      { "difficulty": 7500, "xp_reward": 1440 },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null }
+    ]
+  },
+  {
+    "name": "Treasure Hunt",
+    "preferred_types": ["wind"],
+    "opposing_types": ["water"],
+    "preferred_trait": "Lucky",
+    "stat_weights": { "POW": 0.0, "GRT": 0.0, "AGI": 0.0, "SMT": 0.0, "LOT": 0.70, "LCK": 0.30 },
+    "tiers": [
+      { "difficulty": 5500, "xp_reward": 1250 },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null },
+      { "difficulty": null, "xp_reward": null }
+    ]
+  },
+  {
+    "name": "Bottle for Koltera",
+    "preferred_types": ["wind"],
+    "opposing_types": ["water"],
+    "preferred_trait": "Hard Shell",
+    "stat_weights": { "POW": 0.70, "GRT": 0.20, "AGI": 0.10, "SMT": 0.0, "LOT": 0.0, "LCK": 0.0 },
+    "tiers": [
+      { "difficulty": 6000, "xp_reward": 1300 },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null },

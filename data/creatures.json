@@ -214,5 +214,13 @@
     "trait": "Poison Resist",
     "base_stats": { "POW": 28, "GRT": 10, "AGI": 4, "SMT": 4, "LOT": 12, "LCK": 3 },
     "job_proficiencies": { "Chopping": 2, "Mining": 3, "Exploring": null, "Digging": null, "Fishing": null, "Farming": null }
+  },
+  {
+    "name": "Karn",
+    "tier": 2,
+    "type": "fire",
+    "trait": "Heat Resist",
+    "base_stats": { "POW": 4, "GRT": 14, "AGI": 5, "SMT": 10, "LOT": 26, "LCK": 3 },
+    "job_proficiencies": { "Chopping": null, "Mining": null, "Exploring": null, "Digging": 1, "Fishing": null, "Farming": 3 }
   }
 ]
