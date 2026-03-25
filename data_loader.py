@@ -26,8 +26,14 @@ def load_creatures(
             job_proficiencies=c["job_proficiencies"],
         )
         for c in raw
+        if is_creature_unlocked(c["name"], levels)
     ]
 
+def is_creature_unlocked(name, levels):
+    if name not in levels:
+        print(f"Warning: no level found in creature_levels.json for {name}, skipping...")
+        return False
+    return levels[name] > 0
 
 def load_expeditions(
     path: Path = DATA_DIR / "expeditions.json",
