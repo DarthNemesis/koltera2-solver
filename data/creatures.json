@@ -254,5 +254,37 @@
     "trait": "Hard Shell",
     "base_stats": { "POW": 14, "GRT": 28, "AGI": 4, "SMT": 5, "LOT": 8, "LCK": 3 },
     "job_proficiencies": { "Chopping": null, "Mining": 3, "Exploring": null, "Digging": 1, "Fishing": null, "Farming": null }
+  },
+  {
+    "name": "Nibsy",
+    "tier": 2,
+    "type": "earth",
+    "trait": "Cold Resist",
+    "base_stats": { "POW": 26, "GRT": 14, "AGI": 5, "SMT": 4, "LOT": 8, "LCK": 3 },
+    "job_proficiencies": { "Chopping": null, "Mining": 2, "Exploring": null, "Digging": 3, "Fishing": null, "Farming": null }
+  },
+  {
+    "name": "Wiggle",
+    "tier": 2,
+    "type": "wind",
+    "trait": "Scouting",
+    "base_stats": { "POW": 4, "GRT": 6, "AGI": 5, "SMT": 12, "LOT": 26, "LCK": 10 },
+    "job_proficiencies": { "Chopping": null, "Mining": 2, "Exploring": null, "Digging": null, "Fishing": null, "Farming": 3 }
+  },
+  {
+    "name": "Zibby",
+    "tier": 2,
+    "type": "wind",
+    "trait": "Camouflage",
+    "base_stats": { "POW": 10, "GRT": 5, "AGI": 5, "SMT": 14, "LOT": 26, "LCK": 3 },
+    "job_proficiencies": { "Chopping": null, "Mining": 3, "Exploring": 2, "Digging": null, "Fishing": null, "Farming": null }
+  },
+  {
+    "name": "Flaire",
+    "tier": 3,
+    "type": "fire",
+    "trait": "Heat Resist",
+    "base_stats": { "POW": 34, "GRT": 8, "AGI": 36, "SMT": 5, "LOT": 12, "LCK": 4 },
+    "job_proficiencies": { "Chopping": 1, "Mining": 5, "Exploring": 4, "Digging": null, "Fishing": null, "Farming": null }
   }
 ]
