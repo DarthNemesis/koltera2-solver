@@ -94,7 +94,7 @@
       { "difficulty": 1350, "xp_reward": 780 },
       { "difficulty": 1800, "xp_reward": 909 },
       { "difficulty": 2250, "xp_reward": 1040 },
-      { "difficulty": null, "xp_reward": null }
+      { "difficulty": 2700, "xp_reward": 1170 }
     ]
   },
   {
@@ -122,7 +122,7 @@
       { "difficulty": 2250, "xp_reward": 900 },
       { "difficulty": 3000, "xp_reward": 1050 },
       { "difficulty": 3750, "xp_reward": 1200 },
-      { "difficulty": null, "xp_reward": null }
+      { "difficulty": 4500, "xp_reward": 1350 }
     ]
   },
   {
@@ -147,8 +147,8 @@
     "stat_weights": { "POW": 0.0, "GRT": 0.70, "AGI": 0.0, "SMT": 0.20, "LOT": 0.0, "LCK": 0.10 },
     "tiers": [
       { "difficulty": 3300, "xp_reward": 1000 },
-      { "difficulty": null, "xp_reward": null },
-      { "difficulty": null, "xp_reward": null },
+      { "difficulty": 4950, "xp_reward": 1200 },
+      { "difficulty": 6600, "xp_reward": 1400 },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null }
     ]
@@ -162,7 +162,7 @@
     "tiers": [
       { "difficulty": 2300, "xp_reward": 850 },
       { "difficulty": 3450, "xp_reward": 1020 },
-      { "difficulty": null, "xp_reward": null },
+      { "difficulty": 4600, "xp_reward": 1190 },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null }
     ]
@@ -176,7 +176,7 @@
     "tiers": [
       { "difficulty": 2500, "xp_reward": 900 },
       { "difficulty": 3750, "xp_reward": 1080 },
-      { "difficulty": null, "xp_reward": null },
+      { "difficulty": 5000, "xp_reward": 1260 },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null }
     ]
@@ -260,7 +260,7 @@
     "tiers": [
       { "difficulty": 5500, "xp_reward": 1250 },
       { "difficulty": 8250, "xp_reward": 1500 },
-      { "difficulty": null, "xp_reward": null },
+      { "difficulty": 11000, "xp_reward": 1750 },
       { "difficulty": null, "xp_reward": null },
       { "difficulty": null, "xp_reward": null }
     ]
