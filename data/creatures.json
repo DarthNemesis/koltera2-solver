@@ -278,5 +278,21 @@
     "trait": "Water Breathing",
     "base_stats": { "POW": 4, "GRT": 5, "AGI": 5, "SMT": 10, "LOT": 14, "LCK": 26 },
     "job_proficiencies": { "Chopping": null, "Mining": null, "Exploring": null, "Digging": null, "Fishing": 3, "Farming": 2 }
+  },
+  {
+    "name": "Buzz",
+    "tier": 2,
+    "type": "wind",
+    "trait": "Poison Resist",
+    "base_stats": { "POW": 28, "GRT": 6, "AGI": 15, "SMT": 4, "LOT": 10, "LCK": 3 },
+    "job_proficiencies": { "Chopping": 3, "Mining": null, "Exploring": null, "Digging": null, "Fishing": null, "Farming": 1 }
+  },
+  {
+    "name": "Gusty",
+    "tier": 2,
+    "type": "wind",
+    "trait": "Night Vision",
+    "base_stats": { "POW": 5, "GRT": 4, "AGI": 28, "SMT": 12, "LOT": 8, "LCK": 3 },
+    "job_proficiencies": { "Chopping": null, "Mining": null, "Exploring": 3, "Digging": null, "Fishing": 1, "Farming": null }
   }
 ]
