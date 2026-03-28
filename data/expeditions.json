@@ -266,7 +266,7 @@
     ]
   },
   {
-    "name": "Bottle for Koltera",
+    "name": "Battle for Koltera",
     "preferred_types": ["wind"],
     "opposing_types": ["water"],
     "preferred_trait": "Hard Shell",
