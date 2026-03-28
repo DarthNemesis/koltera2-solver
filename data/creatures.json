@@ -326,5 +326,13 @@
     "trait": "Heat Resist",
     "base_stats": { "POW": 34, "GRT": 8, "AGI": 36, "SMT": 5, "LOT": 12, "LCK": 4 },
     "job_proficiencies": { "Chopping": 1, "Mining": 5, "Exploring": 4, "Digging": null, "Fishing": null, "Farming": null }
+  },
+  {
+    "name": "Honey",
+    "tier": 3,
+    "type": "wind",
+    "trait": "Tracking",
+    "base_stats": { "POW": 34, "GRT": 6, "AGI": 8, "SMT": 10, "LOT": 36, "LCK": 4 },
+    "job_proficiencies": { "Chopping": 5, "Mining": null, "Exploring": 2, "Digging": null, "Fishing": null, "Farming": 3 }
   }
 ]
