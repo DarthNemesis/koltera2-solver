@@ -318,5 +318,13 @@
     "trait": "Regeneration",
     "base_stats": { "POW": 26, "GRT": 12, "AGI": 4, "SMT": 4, "LOT": 14, "LCK": 5 },
     "job_proficiencies": { "Chopping": 2, "Mining": null, "Exploring": null, "Digging": null, "Fishing": 3, "Farming": null }
+  },
+  {
+    "name": "Flaire",
+    "tier": 3,
+    "type": "fire",
+    "trait": "Heat Resist",
+    "base_stats": { "POW": 34, "GRT": 8, "AGI": 36, "SMT": 5, "LOT": 12, "LCK": 4 },
+    "job_proficiencies": { "Chopping": 1, "Mining": 5, "Exploring": 4, "Digging": null, "Fishing": null, "Farming": null }
   }
 ]
