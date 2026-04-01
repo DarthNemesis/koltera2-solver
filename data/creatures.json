@@ -374,5 +374,29 @@
     "trait": "Cold Resist",
     "base_stats": { "POW": 4, "GRT": 36, "AGI": 6, "SMT": 8, "LOT": 34, "LCK": 14 },
     "job_proficiencies": { "Chopping": null, "Mining": 2, "Exploring": null, "Digging": 3, "Fishing":5, "Farming": null }
+  },
+  {
+    "name": "Spike",
+    "tier": 3,
+    "type": "earth",
+    "trait": "Hard Shell",
+    "base_stats": { "POW": 38, "GRT": 34, "AGI": 6, "SMT": 5, "LOT": 10, "LCK": 4 },
+    "job_proficiencies": { "Chopping": 1, "Mining": 5, "Exploring": null, "Digging": 4, "Fishing":null, "Farming": null }
+  },
+  {
+    "name": "Flutter",
+    "tier": 3,
+    "type": "wind",
+    "trait": "Tracking",
+    "base_stats": { "POW": 4, "GRT": 6, "AGI": 38, "SMT": 34, "LOT": 10, "LCK": 5 },
+    "job_proficiencies": { "Chopping": 2, "Mining": null, "Exploring": 5, "Digging": null, "Fishing":null, "Farming": 3 }
+  },
+  {
+    "name": "Koral",
+    "tier": 3,
+    "type": "water",
+    "trait": "Water Breathing",
+    "base_stats": { "POW": 10, "GRT": 38, "AGI": 5, "SMT": 6, "LOT": 34, "LCK": 4 },
+    "job_proficiencies": { "Chopping": null, "Mining": 5, "Exploring": null, "Digging": 2, "Fishing":3, "Farming": null }
   }
 ]
