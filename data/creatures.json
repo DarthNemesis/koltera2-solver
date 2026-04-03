@@ -398,5 +398,29 @@
     "trait": "Water Breathing",
     "base_stats": { "POW": 10, "GRT": 38, "AGI": 5, "SMT": 6, "LOT": 34, "LCK": 4 },
     "job_proficiencies": { "Chopping": null, "Mining": 5, "Exploring": null, "Digging": 2, "Fishing":3, "Farming": null }
+  },
+  {
+    "name": "Peak",
+    "tier": 3,
+    "type": "wind",
+    "trait": "Camouflage",
+    "base_stats": { "POW": 6, "GRT": 34, "AGI": 5, "SMT": 10, "LOT": 36, "LCK": 4 },
+    "job_proficiencies": { "Chopping": null, "Mining": 1, "Exploring": null, "Digging": 4, "Fishing":null, "Farming":5 }
+  },
+  {
+    "name": "Whisk",
+    "tier": 3,
+    "type": "earth",
+    "trait": "Gatherer",
+    "base_stats": { "POW": 34, "GRT": 12, "AGI": 36, "SMT": 5, "LOT": 6, "LCK": 4 },
+    "job_proficiencies": { "Chopping": 3, "Mining": 2, "Exploring": null, "Digging": 5, "Fishing":null, "Farming":null }
+  },
+  {
+    "name": "Mooyak",
+    "tier": 3,
+    "type": "fire",
+    "trait": "Lucky",
+    "base_stats": { "POW": 38, "GRT": 34, "AGI": 6, "SMT": 5, "LOT": 10, "LCK": 4 },
+    "job_proficiencies": { "Chopping": 5, "Mining": null, "Exploring": null, "Digging": 2, "Fishing":null, "Farming":3 }
   }
 ]
