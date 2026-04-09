@@ -101,16 +101,22 @@ def assign_machines(creatures: list[Creature]) -> list[MachineAssignment]:
     return assignments
 
 
-def assign_jobs(creatures: list[Creature]) -> list[JobAssignment]:
+def assign_jobs(creatures: list[Creature], awakened_helpers: bool = False) -> list[JobAssignment]:
     """
     Assign exactly one creature to each job.
-    Rule: highest proficiency wins; tiebreak = highest level.
+    Rule: highest proficiency wins; tiebreak = highest awakening, then highest level.
+    With awakened_helpers=True: awakened creatures are preferred over non-awakened regardless
+    of proficiency, so non-awakened creatures are reserved for expeditions.
     """
     assignments = []
     assigned: set[str] = set()
     for job in JOBS:
         candidates = [c for c in creatures if c.name not in assigned]
-        chosen = max(candidates, key=lambda c, j=job: (c.proficiency(j), c.awakening, c.level))
+        if awakened_helpers:
+            key = lambda c, j=job: (c.awakening > 0, c.proficiency(j), c.awakening, c.level)
+        else:
+            key = lambda c, j=job: (c.proficiency(j), c.awakening, c.level)
+        chosen = max(candidates, key=key)
         assignments.append(JobAssignment(job=job, creature=chosen))
         assigned.add(chosen.name)
     return assignments
@@ -244,7 +250,7 @@ def solve(
         dungeon_assignment = assign_dungeon(creatures, dungeon_type)
         creatures = _exclude(creatures, {c.name for c in dungeon_assignment.party})
 
-    job_assignments = assign_jobs(creatures)
+    job_assignments = assign_jobs(creatures, awakened_helpers=awakened_helpers)
     remaining = _exclude(creatures, {ja.creature.name for ja in job_assignments})
 
     sanctuary = assign_sanctuary(remaining)

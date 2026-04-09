@@ -28,7 +28,7 @@ python main.py [--machine] [--min-party-size {1,2,3}] [--awakened-helpers] [--du
 |------|-------------|
 | `--machine` | Assign awakened creatures to machines after jobs, before expeditions |
 | `--min-party-size N` | Minimum creatures per expedition party (default: 1) |
-| `--awakened-helpers` | Only awakened creatures may serve as party helpers (companions) in expeditions |
+| `--awakened-helpers` | Reserve non-awakened creatures for expeditions: awakened creatures are preferred for job assignments regardless of proficiency, and only awakened creatures may serve as expedition party companions |
 | `--dungeon TYPE` | Pull 3 creatures for the dungeon **first** (before jobs). TYPE is one of: `combat`, `chopping`, `mining`, `digging`, `farming`, `fishing`, `exploring` |
 | `--fill-expeditions` | Scale minimum party size by roster size and dynamically enforce a per-iteration floor to guarantee no unassigned creatures (when pool starts below 60) |
 
