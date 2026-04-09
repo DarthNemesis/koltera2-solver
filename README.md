@@ -4,10 +4,10 @@ Optimally assigns creatures to expeditions and jobs in Koltera 2, maximising XP/
 
 ## What it does
 
-1. **Jobs** — assigns one creature per job (Chopping, Mining, Exploring, Digging, Fishing, Farming) based on proficiency
-2. **Sanctuary** — assigns awakened creatures (up to 8) from the remaining pool, prioritising highest tier
-3. **Machines** *(optional, `--machine`)* — assigns awakened creatures to 9 machines: Bakery (water), Sawmill (wind), Greenhouse (earth), Smelter (fire), Cooker (fire), and Stone Quarry, Stick Finder, Coal Miner, Refinery (any element)
-4. **Dungeon** *(optional, `--dungeon TYPE`)* — pulls 3 creatures for the dungeon before expeditions, selected by highest dungeon score
+1. **Dungeon** *(optional, `--dungeon TYPE`)* — pulls 3 creatures **first**, before anything else, selected by highest dungeon score
+2. **Jobs** — assigns one creature per job (Chopping, Mining, Exploring, Digging, Fishing, Farming) based on proficiency
+3. **Sanctuary** — assigns awakened creatures (up to 8) from the remaining pool, prioritising highest tier
+4. **Machines** *(optional, `--machine`)* — assigns awakened creatures to 9 machines: Bakery (water), Sawmill (wind), Greenhouse (earth), Smelter (fire), Cooker (fire), and Stone Quarry, Stick Finder, Coal Miner, Refinery (any element)
 5. **Expeditions** — assigns remaining creatures to expeditions in parties of up to 3, picking the best tier and party composition — non-awakened creatures take priority over awakened ones
 - Maximises XP per second, accounting for type bonuses, trait bonuses, stat weights, and party score
 
@@ -29,20 +29,23 @@ python main.py [--machine] [--min-party-size {1,2,3}] [--awakened-helpers] [--du
 | `--machine` | Assign awakened creatures to machines after jobs, before expeditions |
 | `--min-party-size N` | Minimum creatures per expedition party (default: 1) |
 | `--awakened-helpers` | Only awakened creatures may serve as party helpers (companions) in expeditions |
-| `--dungeon TYPE` | Pull 3 creatures for a dungeon before expeditions. TYPE is one of: `combat`, `chopping`, `mining`, `digging`, `farming`, `fishing`, `exploring` |
+| `--dungeon TYPE` | Pull 3 creatures for the dungeon **first** (before jobs). TYPE is one of: `combat`, `chopping`, `mining`, `digging`, `farming`, `fishing`, `exploring` |
 | `--fill-expeditions` | Scale minimum party size by roster size and dynamically enforce a per-iteration floor to guarantee no unassigned creatures (when pool starts below 60) |
 
 When `--fill-expeditions` is active, the base minimum party size is set by how many creatures are available when expedition assignment begins: fewer than 40 → 1, 40–59 → 2, 60 or more → 3. For pools under 60, a per-iteration check also raises the minimum to `ceil(remaining creatures / remaining expeditions)` as soon as it would otherwise be impossible to assign everyone.
 
-Output shows Sanctuary, Job assignments, Machine assignments (if `--machine`), Dungeon assignment (if `--dungeon`), Expedition assignments, and any unassigned creatures.
+Output shows Dungeon assignment (if `--dungeon`), Sanctuary, Job assignments, Machine assignments (if `--machine`), Expedition assignments, and any unassigned creatures.
 
 ## Dungeon mechanics
 
-- **Combat** dungeons score on POW + GRT + AGI + SMT; all other types score on SMT + LOT + LCK
+- **Combat** score: `floor((POW + GRT + AGI + SMT) × 0.25)` per creature
+- **Gathering** score (all other types): `floor((SMT + LOT + LCK) × 1/3)` per creature
+- Party score = sum of the 3 individual creature scores
 - 5 difficulty tiers: 2000 / 4000 / 6000 / 8000 / 10000
-- Grade is determined by score vs. difficulty: S (≥2×), A (≥1×), B (≥0.6×), C (≥0.25×), F (<0.25×)
+- Grade is determined by score vs. difficulty ratio: S (≥2×), A (≥1×), B (≥0.6×), C (≥0.25×), F (<0.25×)
 - Grade multipliers: S=×2, A=×1.5, B=×1, C=×0.5, F=×0.25 — applied to base XP rate and Chronicle Rune count
 - Chronicle Runes (combat only): `max(1, floor(tier × 2 × grade_mult))` per tier
+- Output recommends the single best tier: most runes for combat, highest XP rate for gathering
 
 ## Data files
 

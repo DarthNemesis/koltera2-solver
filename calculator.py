@@ -59,9 +59,11 @@ def dungeon_grade(score: int, difficulty: int) -> str:
 
 
 def creature_dungeon_score(creature: Creature, dungeon_type: str) -> int:
-    """Sum of relevant stats for this creature in the given dungeon type."""
+    """Weighted sum of relevant stats, floored. Combat: each stat ×1/4. Gathering: each ×1/3."""
     stats = creature.stats
-    return sum(stats[s] for s in DUNGEON_STAT_WEIGHTS[dungeon_type])
+    relevant = DUNGEON_STAT_WEIGHTS[dungeon_type]
+    weight = 1 / len(relevant)
+    return floor(sum(stats[s] for s in relevant) * weight)
 
 
 def dungeon_tier_results(party_dungeon_score: int, dungeon_type: str) -> list[DungeonTierResult]:

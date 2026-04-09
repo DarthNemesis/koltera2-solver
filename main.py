@@ -13,17 +13,15 @@ def _print_dungeon(da: DungeonAssignment) -> None:
     print(_SEP)
     print("  Party: " + ", ".join(c.name for c in da.party))
     is_combat = da.dungeon_type == "combat"
-    header = "  Tier     Diff  Grade   XP rate"
     if is_combat:
-        header += "   Runes"
-    print(header)
-    for tr in da.tier_results:
-        row = (
-            f"  {tr.tier_number:<6} {tr.difficulty:>6}  {tr.grade:<5} {tr.xp_rate:>8.2f}"
+        best = max(da.tier_results, key=lambda t: t.chronicle_runes)
+        print(
+            f"  Best tier: {best.tier_number} [{best.grade}]  "
+            f"{best.chronicle_runes} runes  ({best.xp_rate:.2f} XP/s)"
         )
-        if is_combat:
-            row += f"  {tr.chronicle_runes:>6}"
-        print(row)
+    else:
+        best = max(da.tier_results, key=lambda t: t.xp_rate)
+        print(f"  Best tier: {best.tier_number} [{best.grade}]  ({best.xp_rate:.2f} XP/s)")
     print()
 
 

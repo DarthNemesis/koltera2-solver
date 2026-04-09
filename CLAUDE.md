@@ -24,7 +24,28 @@
 - Tracked in `creature_levels.json` as `"awakening": int` (0 = not awakened)
 - Moss (tier 0 in-game) is displayed as tier 0 but treated as tier 1 by the solver — leave as-is
 
-**Job assignment (first step):**
+**Dungeon assignment (optional, `--dungeon` flag, FIRST step — before jobs):**
+- Types: combat, chopping, mining, digging, farming, fishing, exploring
+- Pulls exactly 3 creatures from the full roster before any other assignment
+- Score formula: `floor(sum(relevant stats) × weight)` where stat = base_stat × level
+  - Combat: POW, GRT, AGI, SMT each weighted 1/4
+  - Gathering (all other types): SMT, LOT, LCK each weighted 1/3
+- Picks the 3 creatures with the highest individual dungeon scores; no type/trait bonuses
+- 5 difficulty tiers: 2000, 4000, 6000, 8000, 10000
+- Base XP rates per tier: 0.5, 1.0, 1.5, 2.0, 2.5 (multiplied by grade multiplier)
+- Grade thresholds (score / difficulty ratio):
+  - S (×2.0): score ≥ 2 × difficulty
+  - A (×1.5): difficulty ≤ score < 2 × difficulty
+  - B (×1.0): 0.6 × difficulty ≤ score < difficulty
+  - C (×0.5): 0.25 × difficulty ≤ score < 0.6 × difficulty
+  - F (×0.25): score < 0.25 × difficulty
+- Combat dungeon Chronicle Rune reward: `max(1, floor(tier_number × 2 × grade_mult))`
+  - tier_rune_bases = [2, 4, 6, 8, 10] for tiers 1–5
+  - Verified samples: score 888→CFFF, 3135→ABCC, 3795→ABBC, 4796→SABC, 6482→SAAB, 7982→SAAB
+- Output shows recommended tier for maximum loot (most runes for combat, highest XP rate for gathering)
+- Dungeon creatures are removed from the pool before jobs, sanctuary, machines, and expeditions
+
+**Job assignment (second step):**
 - 6 jobs: Chopping, Mining, Exploring, Digging, Fishing, Farming
 - Exactly 1 creature assigned per job; a creature can only hold 1 job
 - For each job: pick creature with highest proficiency (0–10); tiebreak = highest awakening, then highest level
@@ -44,24 +65,6 @@
 - Type-specific slots are filled first, then any-type slots
 - Tiebreak: highest awakening, then highest level
 - Machine-assigned creatures are removed from the expedition pool before solving
-
-**Dungeon assignment (optional, `--dungeon` flag, post-machine step):**
-- Types: combat, chopping, mining, digging, farming, fishing, exploring
-- Pulls exactly 3 creatures from the remaining pool (after jobs, sanctuary, machines) just before expeditions
-- Stat weights: combat uses POW+GRT+AGI+SMT equally; all other types use SMT+LOT+LCK equally
-- Picks the 3 creatures with the highest individual dungeon scores; no type/trait bonuses
-- 5 difficulty tiers: 2000, 4000, 6000, 8000, 10000
-- Base XP rates per tier: 0.5, 1.0, 1.5, 2.0, 2.5 (multiplied by grade multiplier)
-- Grade thresholds (score vs difficulty ratio):
-  - S (×2.0): score ≥ 2 × difficulty
-  - A (×1.5): difficulty ≤ score < 2 × difficulty
-  - B (×1.0): 0.6 × difficulty ≤ score < difficulty
-  - C (×0.5): 0.25 × difficulty ≤ score < 0.6 × difficulty
-  - F (×0.25): score < 0.25 × difficulty
-- Combat dungeon Chronicle Rune reward: `max(1, floor(tier_number × 2 × grade_mult))`
-  - tier_rune_bases = [2, 4, 6, 8, 10] for tiers 1–5
-  - Verified samples: score 888→CFFF, 3135→ABCC, 3795→ABBC, 4796→SABC, 6482→SAAB, 7982→SAAB
-- Dungeon creatures are removed from the expedition pool before solving
 
 **`--fill-expeditions` flag (expedition step):**
 - Scales base `min_party_size` by pool size at the start of expedition allocation:
